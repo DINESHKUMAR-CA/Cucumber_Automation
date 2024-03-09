@@ -6,17 +6,17 @@ import org.testng.Assert;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.SubscriptionPage;
+import pages.Subscription_Page;
 
-public class SubscriptionStep {
+public class Subscription_Step {
 
 	WebDriver driver;
-	SubscriptionPage subscriptionPage;
+	Subscription_Page subscriptionPage;
 	Hooks hooks;
 
-	public SubscriptionStep() {
+	public Subscription_Step() {
 		hooks = new Hooks();
-		subscriptionPage = new SubscriptionPage(Hooks.driver);
+		subscriptionPage = new Subscription_Page(Hooks.driver);
 	}
 	
 	@When("The user scroll down to the footer")

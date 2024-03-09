@@ -3,17 +3,17 @@ package stepDefinitions;
 import org.openqa.selenium.WebDriver;
 
 import io.cucumber.java.en.When;
-import pages.CartPage;
+import pages.Cart_Page;
 
 public class CartStep {
 	
 	WebDriver driver;
-	CartPage cartPage;
+	Cart_Page cartPage;
 	Hooks hooks;
 	
 	public CartStep() {
 		hooks = new Hooks();
-		cartPage = new CartPage(Hooks.driver);
+		cartPage = new Cart_Page(Hooks.driver);
 	}
 	
 	@When("The user clicks on cart option")

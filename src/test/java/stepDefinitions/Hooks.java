@@ -5,23 +5,26 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
-import pages.LoginPage;
+import pages.Login_Page;
 import pages.Register_User_Page;
 
 public class Hooks {
 	
     public static WebDriver driver;
     Register_User_Page signUpPage;
-    LoginPage loginPage;
+    Login_Page loginPage;
 
     @Given("The user launches the browser and verifying the homepage")
    
@@ -39,9 +42,17 @@ public class Hooks {
 
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
+        
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        try {
+            wait.until(ExpectedConditions.numberOfWindowsToBe(2));
+        } catch (TimeoutException e) {
+            System.out.println("Extension tab did not open within the specified time.");
+        }
+        
         signUpPage = new Register_User_Page(driver);
-        loginPage = new LoginPage(driver);
-
+        loginPage = new Login_Page(driver);
+        
         driver.navigate().to("http://automationexercise.com");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         

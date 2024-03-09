@@ -8,17 +8,17 @@ import io.cucumber.java.en.Then;
 import java.util.List;
 
 import org.junit.Assert;
-import pages.SearchProductPage;
+import pages.SearchProduct_Page;
 
-public class SearchProduct {
+public class SearchProduct_Step {
 
 	WebDriver driver;
-	SearchProductPage searchProductPage;
+	SearchProduct_Page searchProductPage;
 	Hooks hooks;
 
-	public SearchProduct() {
+	public SearchProduct_Step() {
 		hooks = new Hooks();
-		searchProductPage = new SearchProductPage(Hooks.driver);
+		searchProductPage = new SearchProduct_Page(Hooks.driver);
 	}
 
 	@And("The user enters {string} in the search box")
@@ -46,9 +46,11 @@ public class SearchProduct {
 	@Then("All the products related to T-shirt should be visible")
 	public void All_the_products_related_to_search_should_be_visible() {
 		List<String> actualProductNames = searchProductPage.getAllSearchedProductNames();
-
+		
+		System.out.println("Below are the displayed products in products page\n======================================");
+		
 		for (String productName : actualProductNames) {
-			System.out.println("The products we got is: " + productName);
+			System.out.println(productName);
 		}
 	}
 

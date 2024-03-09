@@ -1,7 +1,8 @@
 Feature: Login to the application
 
   Scenario: Login User with correct email and password
- 
+ 		
+ 		When The user clicks on Signup Login option
     And The user enters the name as "Lucas Scott" and email address as "scott.lucas@maildfence.com"
     And The user clicks the 'Signup' button
     Then 'ENTER ACCOUNT INFORMATION' should be visible on the page

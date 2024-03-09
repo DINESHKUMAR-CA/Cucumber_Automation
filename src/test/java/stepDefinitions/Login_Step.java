@@ -7,21 +7,21 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.LoginPage;
+import pages.Login_Page;
 
-public class Login_User {
+public class Login_Step {
 
 	WebDriver driver;
-	LoginPage loginpage;
+	Login_Page loginpage;
 	Hooks hook;
 
-	public Login_User() {
-		loginpage = new LoginPage(driver);
+	public Login_Step() {
+		loginpage = new Login_Page(driver);
 	}
 
 	@Before
 	public void setup() {
-		loginpage = new LoginPage(Hooks.driver);
+		loginpage = new Login_Page(Hooks.driver);
 	}
 
 	@When("The user clicks on Logout option in homepage")

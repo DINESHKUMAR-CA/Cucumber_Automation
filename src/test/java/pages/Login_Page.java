@@ -9,14 +9,16 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LoginPage {
+public class Login_Page {
 	
 	WebDriver driver;
+	WebDriverWait wait;
 	
-	public LoginPage(WebDriver IDriver) {
+	public Login_Page(WebDriver IDriver) {
 		
 		driver = IDriver;
 		PageFactory.initElements(driver, this);
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		
 	}
 	
@@ -43,7 +45,7 @@ public class LoginPage {
 	}
 	
 	public boolean isLoginToYourAccountTxtVisible() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		
 		return wait.until(ExpectedConditions.visibilityOf(LoginToAccountTxt)).isDisplayed();
 	}
 	
@@ -61,7 +63,7 @@ public class LoginPage {
 	}
 	
 	public boolean isInvalidEmailPwdErrorMsgVisible() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		
 		return wait.until(ExpectedConditions.visibilityOf(invalidEmailPwdErrorMsg)).isDisplayed();
 	}
 	

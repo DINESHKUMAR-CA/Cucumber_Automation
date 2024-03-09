@@ -5,17 +5,17 @@ import org.testng.Assert;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import pages.TestCasesPage;
+import pages.TestCases_Page;
 
-public class TestCases {
+public class TestCases_Step {
 	
 	WebDriver driver;
-	TestCasesPage testCasesPage;
+	TestCases_Page testCasesPage;
 	Hooks hooks;
 	
-	public TestCases() {
+	public TestCases_Step() {
 		hooks = new Hooks();
-		testCasesPage = new TestCasesPage(Hooks.driver);
+		testCasesPage = new TestCases_Page(Hooks.driver);
 	}
 	
 	@And("The user clicks on Test cases in the homepage")

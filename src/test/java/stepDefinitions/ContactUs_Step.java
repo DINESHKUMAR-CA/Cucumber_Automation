@@ -5,18 +5,18 @@ import org.testng.Assert;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import pages.ContactUsPage;
+import pages.ContactUs_Page;
 
-public class ContactUs {
+public class ContactUs_Step {
 	
 	WebDriver driver;
-	ContactUsPage contactPage;
+	ContactUs_Page contactPage;
 	Hooks hooks;
 	
 	
-	public ContactUs() {
+	public ContactUs_Step() {
 		hooks = new Hooks();
-		contactPage = new ContactUsPage(Hooks.driver);
+		contactPage = new ContactUs_Page(Hooks.driver);
 	}
 	
 	@And("The user clicks on the contact Us option in the homepage")

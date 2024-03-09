@@ -5,25 +5,25 @@ import org.testng.Assert;
 
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Then;
-import pages.LoginPage;
+import pages.Login_Page;
 import pages.Register_User_Page;
 
 public class Invalid_Login {
 	
 	WebDriver driver;
-	LoginPage loginpage;
+	Login_Page loginpage;
 	Register_User_Page signUpPage;
 	
 	Hooks hook;
 	
 	public Invalid_Login() {
-		loginpage = new LoginPage(driver);
+		loginpage = new Login_Page(driver);
 		signUpPage = new Register_User_Page(driver);
 	}
 	
 	@Before
 	public void setup() {
-		loginpage = new LoginPage(Hooks.driver);
+		loginpage = new Login_Page(Hooks.driver);
 	}
 	
 	@Then("{string} error message should be visible")

@@ -9,6 +9,7 @@ Feature: Search Product On The Products Page
     Then The searched product 'Cotton Mull Embroidered Dress' should be visible
     And The user clears the searchbox and searches with 'T-Shirt'
     And The user clicks on search icon
+    And The user should see the products list
     Then All the products related to T-shirt should be visible
     
 		

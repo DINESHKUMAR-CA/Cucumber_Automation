@@ -8,12 +8,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class TestCasesPage {
+public class TestCases_Page {
 		
 	WebDriver driver;
 	WebDriverWait wait;
 	
-	public TestCasesPage(WebDriver IDriver) {
+	public TestCases_Page(WebDriver IDriver) {
 		driver = IDriver;
 		PageFactory.initElements(driver, this);
 	}

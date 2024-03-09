@@ -6,11 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class SubscriptionPage {
+public class Subscription_Page {
 
 	WebDriver driver;
 
-	public SubscriptionPage(WebDriver IDriver) {
+	public Subscription_Page(WebDriver IDriver) {
 		driver = IDriver;
 		PageFactory.initElements(driver, this);
 	}

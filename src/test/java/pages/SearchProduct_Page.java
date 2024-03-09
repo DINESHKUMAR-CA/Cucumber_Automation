@@ -4,16 +4,17 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class SearchProductPage {
+public class SearchProduct_Page {
 
 	WebDriver driver;
 
-	public SearchProductPage(WebDriver IDriver) {
+	public SearchProduct_Page(WebDriver IDriver) {
 
 		driver = IDriver;
 		PageFactory.initElements(driver, this);
@@ -33,6 +34,8 @@ public class SearchProductPage {
 
 	public void enterProductNameOnSearchBox(String productName) {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+		
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", searchBox);
 		searchBox.clear();
 		searchBox.sendKeys(productName);
 	}

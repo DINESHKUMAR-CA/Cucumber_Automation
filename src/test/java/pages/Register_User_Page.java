@@ -13,11 +13,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Register_User_Page {
 
 	public static WebDriver driver;
+	WebDriverWait wait;
 
 	public Register_User_Page(WebDriver IDriver) {
 
 		driver = IDriver;
 		PageFactory.initElements(driver, this);
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	}
 
 	@FindBy(xpath = "//a[normalize-space()='Signup / Login']")
@@ -112,13 +114,12 @@ public class Register_User_Page {
 
 	public void clickOnSignUpOption() {
 		
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(signUpTxt));
 		signUpTxt.click();
 	}
 
 	public boolean isNewUserSignUpTextVisible() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		
 		return wait.until(ExpectedConditions.visibilityOf(newUserSignUpTxt)).isDisplayed();
 	}
 
@@ -136,7 +137,6 @@ public class Register_User_Page {
 	}
 	
 	public boolean isAccountExistErrorMsgVisible() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		return wait.until(ExpectedConditions.visibilityOf(accountExistErrorMsg)).isDisplayed();	
 	}
 	
@@ -145,7 +145,6 @@ public class Register_User_Page {
 	}
 	
 	public boolean isEnterAccountInformationTextVisible() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		return wait.until(ExpectedConditions.visibilityOf(informationTxt)).isDisplayed();
 	}
 
@@ -221,7 +220,6 @@ public class Register_User_Page {
 	}
 
 	public boolean isAccountCreatedMessageVisible() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		return wait.until(ExpectedConditions.visibilityOf(accountCreatedMessage)).isDisplayed();
 	}
 
@@ -256,7 +254,6 @@ public class Register_User_Page {
 	}
 
 	public boolean isAccountDeletedMsgTxtVisible() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		return wait.until(ExpectedConditions.visibilityOf(accountDeletedMsg)).isDisplayed();
 	}
 

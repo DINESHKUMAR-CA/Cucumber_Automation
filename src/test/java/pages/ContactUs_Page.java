@@ -11,11 +11,11 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ContactUsPage {
+public class ContactUs_Page {
 	
 	WebDriver driver;
 	
-	public ContactUsPage(WebDriver IDriver) {
+	public ContactUs_Page(WebDriver IDriver) {
 		
 		driver = IDriver;
 		PageFactory.initElements(driver, this);

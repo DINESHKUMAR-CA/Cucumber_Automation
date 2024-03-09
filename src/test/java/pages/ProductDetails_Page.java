@@ -11,12 +11,12 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ProductDetailsPage {
+public class ProductDetails_Page {
 	
 	WebDriver driver;
 	WebDriverWait wait;
 	
-	public ProductDetailsPage(WebDriver IDriver) {
+	public ProductDetails_Page(WebDriver IDriver) {
 		driver = IDriver;
 		PageFactory.initElements(driver, this);	
 		
